@@ -1,9 +1,6 @@
 
 //app.js
 
-
-
-
 //Seleziono il form per applicare l'event listener submit
 const weatherForm = document.querySelector('form')
 
@@ -26,7 +23,7 @@ weatherForm.addEventListener('submit',(e)=>{
 
     messageOne.textContent ='Loading...'
 
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
     response.json().then((data)=>{
         if (data.error){
             messageOne.textContent = data.error

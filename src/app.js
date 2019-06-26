@@ -1,5 +1,3 @@
-
-
 //Web-server/src/app.js
 
 const geocode = require('./utils/geocode')
@@ -12,6 +10,7 @@ const hbs = require('hbs')
 
 const app = express()
 
+const port = process.env.PORT || 3000
 
 /************* Define path for Exress config*******************/
 const publicDirectoryPath = path.join(__dirname,'../public') 
@@ -157,6 +156,6 @@ app.get('*',(req,res)=>{
 
 
 //questo serve a far partire il webserver sulla porta 3000
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log('Server is up on port 3000.')
 })
